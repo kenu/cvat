@@ -1,4 +1,4 @@
-// Copyright (C) 2020 Intel Corporation
+// Copyright (C) 2021 Intel Corporation
 //
 // SPDX-License-Identifier: MIT
 
@@ -28,7 +28,7 @@ import Text from 'antd/lib/typography/Text';
 import getCore from 'cvat-core-wrapper';
 import consts from 'consts';
 
-import { CVATLogo, AccountIcon } from 'icons';
+import { AccountIcon } from 'icons';
 import ChangePasswordDialog from 'components/change-password-modal/change-password-modal';
 import { switchSettingsDialog as switchSettingsDialogAction } from 'actions/settings-actions';
 import { logoutAsync, authActions } from 'actions/auth-actions';
@@ -232,7 +232,11 @@ function HeaderContainer(props: Props): JSX.Element {
                 About
             </Menu.Item>
             {renderChangePasswordItem && (
-                <Menu.Item className='cvat-header-menu-change-password' onClick={(): void => switchChangePasswordDialog(true)} disabled={changePasswordFetching}>
+                <Menu.Item
+                    className='cvat-header-menu-change-password'
+                    onClick={(): void => switchChangePasswordDialog(true)}
+                    disabled={changePasswordFetching}
+                >
                     {changePasswordFetching ? <LoadingOutlined /> : <EditOutlined />}
                     Change password
                 </Menu.Item>
@@ -248,7 +252,11 @@ function HeaderContainer(props: Props): JSX.Element {
     return (
         <Layout.Header className='cvat-header'>
             <div className='cvat-left-header'>
-                <Icon className='cvat-logo-icon' component={CVATLogo} />
+                <img
+                    src='https://okdevtv.com/target/hai-labeling.png'
+                    className='anticon cvat-logo-icon'
+                    alt='aicomt'
+                />
                 <Button
                     className='cvat-header-button'
                     type='link'
