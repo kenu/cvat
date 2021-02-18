@@ -1,4 +1,4 @@
-// Copyright (C) 2020 Intel Corporation
+// Copyright (C) 2021 Intel Corporation
 //
 // SPDX-License-Identifier: MIT
 
@@ -43,7 +43,7 @@ function LoginPageComponent(props: LoginPageComponentProps & RouteComponentProps
                     <Row justify='start' align='top'>
                         <Col>
                             <Text strong>
-                                New to CVAT? Create
+                                New to HAI Labeling? Create
                                 <Link to='/auth/register'> an account</Link>
                             </Text>
                         </Col>
