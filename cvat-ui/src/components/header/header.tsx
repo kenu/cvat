@@ -13,7 +13,6 @@ import Icon, {
     EditOutlined,
     LoadingOutlined,
     LogoutOutlined,
-    GithubOutlined,
     QuestionCircleOutlined,
     CaretDownOutlined,
     ControlOutlined,
@@ -148,7 +147,7 @@ function HeaderContainer(props: Props): JSX.Element {
     } = props;
 
     const {
-        CHANGELOG_URL, LICENSE_URL, GITTER_URL, FORUM_URL, GITHUB_URL,
+        CHANGELOG_URL, LICENSE_URL, GITTER_URL, FORUM_URL,
     } = consts;
 
     const history = useHistory();
@@ -313,18 +312,6 @@ function HeaderContainer(props: Props): JSX.Element {
                 )}
             </div>
             <div className='cvat-right-header'>
-                <Button
-                    className='cvat-header-button'
-                    type='link'
-                    href={GITHUB_URL}
-                    onClick={(event: React.MouseEvent): void => {
-                        event.preventDefault();
-                        window.open(GITHUB_URL, '_blank');
-                    }}
-                >
-                    <GithubOutlined />
-                    <Text className='cvat-text-color'>GitHub</Text>
-                </Button>
                 <Button
                     className='cvat-header-button'
                     type='link'
