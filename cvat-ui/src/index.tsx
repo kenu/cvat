@@ -18,10 +18,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ExtendedKeyMapOptions } from 'react-hotkeys';
 import { connect, Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import createRootReducer from 'reducers/root-reducer';
 import { resetErrors, resetMessages } from './actions/notification-actions';
 import { CombinedState, NotificationsState } from './reducers/interfaces';
+
+import DefaultLayout from './pages/layout/defaultLayout';
+import TagLayout from './pages/layout/tagLayout';
+import MainLayout from './pages/layout/mainLayout';
+
+import './style/css/common.scss';
 
 createCVATStore(createRootReducer);
 const cvatStore = getCVATStore();
@@ -117,7 +123,12 @@ const ReduxAppWrapper = connect(mapStateToProps, mapDispatchToProps)(CVATApplica
 ReactDOM.render(
     <Provider store={cvatStore}>
         <BrowserRouter>
-            <ReduxAppWrapper />
+            <Switch>
+                <Route path={['/host', '/member']} render={(props) => <DefaultLayout {...props} />}></Route>
+                <Route path='/tag' component={TagLayout}></Route>
+                <Route path='/' component={MainLayout}></Route>
+                <Redirect from='*' to='/' />
+            </Switch>
         </BrowserRouter>
         <LayoutGrid />
     </Provider>,
