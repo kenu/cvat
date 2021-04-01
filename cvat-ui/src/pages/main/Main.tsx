@@ -23,7 +23,6 @@ export default function Main() {
                                 </div>
                             </div>
                             <div className='imgContents'>
-                                {/* <img src={require('../../style/img/product_mask.png')} alt='' /> */}
                             </div>
                         </div>
                     </div>
@@ -46,10 +45,6 @@ export default function Main() {
                                 </div>
                             </div>
                             <div className='imgContents multi'>
-                                {/* <img src={require('../../style/img/solution_mask_01.png')} alt='' />
-                                <img src={require('../../style/img/solution_mask_02.png')} alt='' />
-                                <img src={require('../../style/img/solution_mask_03.png')} alt='' />
-                                <img src={require('../../style/img/solution_mask_04.png')} alt='' /> */}
                             </div>
                         </div>
                     </div>
